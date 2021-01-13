@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import CompetitionsState from './context/competitions/CompetitionsState';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <CompetitionsState>
     <App />
-  </React.StrictMode>,
+  </CompetitionsState>,
   document.getElementById('root')
 );
