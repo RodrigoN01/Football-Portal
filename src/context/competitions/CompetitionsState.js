@@ -4,6 +4,8 @@ import CompetitionsContext from './competitionsContext';
 import CompetitionsReducer from './competitionsReducer';
 import { SET_COMPETITIONS, SET_LOADING } from '../types';
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 const CompetitionsState = ({ children }) => {
   const initialState = {
     competitions: [],
@@ -17,7 +19,12 @@ const CompetitionsState = ({ children }) => {
     dispatch({ type: SET_LOADING });
 
     const { data } = await axios.get(
-      `http://api.football-data.org/v2/competitions/`
+      `http://api.football-data.org/v2/competitions/`,
+      {
+        headers: {
+          'X-Auth-Token': 'b3802c85139f4369ad5051bf23d19b6f',
+        },
+      }
     );
 
     console.log(data);
