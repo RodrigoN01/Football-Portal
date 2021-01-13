@@ -22,7 +22,7 @@ const CompetitionsState = ({ children }) => {
       `http://api.football-data.org/v2/competitions/`,
       {
         headers: {
-          'X-Auth-Token': 'b3802c85139f4369ad5051bf23d19b6f',
+          'X-Auth-Token': API_KEY,
         },
       }
     );
