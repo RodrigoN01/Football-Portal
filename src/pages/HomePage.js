@@ -17,6 +17,7 @@ const HomePage = () => {
 
   return (
     <div className='homepage'>
+      <h1 className='homepage__title'>Football Competitions</h1>
       {loading ? (
         <Loader />
       ) : (
