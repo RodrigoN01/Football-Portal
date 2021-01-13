@@ -31,7 +31,7 @@ const CompetitionsState = ({ children }) => {
 
     dispatch({
       type: SET_COMPETITIONS,
-      payload: data,
+      payload: data.competitions,
     });
   };
 

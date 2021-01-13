@@ -1,5 +1,5 @@
 :root {
-  --dark-color: #324ca8;
+  --primary-color: #324ca8;
   --secondary-color: #ffed24;
   --offwhite: #f4f4f4;
 }
@@ -12,12 +12,6 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-img {
-  width: 210px;
-  height: 295px;
-  object-fit: cover;
 }
 
 /* Utils */
@@ -34,7 +28,7 @@ img {
 /* Navbar Styles */
 .navbar {
   padding: 1rem;
-  background-color: var(--dark-color);
+  background-color: var(--primary-color);
 }
 
 .navbar__nav {
@@ -65,7 +59,7 @@ img {
   color: var(--offwhite);
   text-decoration: none;
   margin-left: 0.5rem;
-  border: 1px solid var(--dark-color);
+  border: 1px solid var(--primary-color);
   font-size: 20px;
 }
 
@@ -91,7 +85,7 @@ img {
 }
 
 .listitem__info {
-  color: var(--dark-color);
+  color: var(--primary-color);
   text-align: center;
 }
 

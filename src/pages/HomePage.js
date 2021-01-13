@@ -23,10 +23,10 @@ const HomePage = () => {
         <div className='homepage__list'>
           {competitions.map((item) => (
             <Competition
-              key={item.competitions.id}
-              id={item.competitions.id}
-              name={item.competitions.name}
-              area={item.competitions.area.name}
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              area={item.area.name}
             />
           ))}
         </div>
