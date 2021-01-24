@@ -22,7 +22,7 @@ const TeamsState = ({ children }) => {
   const [state, dispatch] = useReducer(TeamsReducer, initialState);
 
   const getTeams = async (id) => {
-    dispatch({ type: SET_TEAMS });
+    dispatch({ type: SET_LOADING });
 
     const { data } = await axios.get(
       `http://api.football-data.org/v2/competitions/${id}/teams`,

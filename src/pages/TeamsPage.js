@@ -18,7 +18,6 @@ const TeamsPage = ({ match }) => {
 
   return (
     <div className='teamspage'>
-      <Navbar />
       {loading ? (
         <Loader />
       ) : (
