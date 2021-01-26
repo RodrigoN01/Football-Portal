@@ -7,7 +7,7 @@ const AboutPage = () => {
         <div>
           <p>Football Portal v(1.0)</p>
           <p>
-            A simple application that displays football competitions and teams
+            Web application that displays football competitions and teams
             information from an external API
           </p>
           <ul>
@@ -16,7 +16,7 @@ const AboutPage = () => {
             <li>useContext</li>
             <li>useReducer</li>
             <li>useState</li>
-            <li>FetchAPI</li>
+            <li>Axios</li>
           </ul>
         </div>
       </div>

@@ -28,6 +28,7 @@ const HomePage = () => {
               id={item.id}
               name={item.name}
               area={item.area.name}
+              logo={item.emblemUrl}
             />
           ))}
         </div>

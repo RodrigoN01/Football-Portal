@@ -9,7 +9,6 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 const CompetitionsState = ({ children }) => {
   const initialState = {
     competitions: [],
-    singleCompetition: {},
     loading: false,
   };
 
@@ -29,9 +28,26 @@ const CompetitionsState = ({ children }) => {
 
     console.log(data);
 
+    const filteredCompetitions = (arr, index) => {
+      return index.map((idx) => arr[idx]);
+    };
+
     dispatch({
       type: SET_COMPETITIONS,
-      payload: data.competitions,
+      payload: filteredCompetitions(data.competitions, [
+        23,
+        45,
+        46,
+        49,
+        57,
+        66,
+        80,
+        93,
+        107,
+        128,
+        149,
+        48,
+      ]),
     });
   };
 

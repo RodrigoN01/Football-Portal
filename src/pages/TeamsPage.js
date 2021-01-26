@@ -4,7 +4,6 @@ import { useContext, useEffect } from 'react';
 import TeamsContext from '../context/teams/teamsContext';
 
 // Components
-import Navbar from '../components/Navbar';
 import Loader from '../components/Loader';
 import Teams from '../components/Teams';
 
