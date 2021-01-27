@@ -13,6 +13,8 @@ const HomePage = () => {
 
   useEffect(() => {
     getCompetitions();
+
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -28,7 +30,6 @@ const HomePage = () => {
               id={item.id}
               name={item.name}
               area={item.area.name}
-              logo={item.emblemUrl}
             />
           ))}
         </div>

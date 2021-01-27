@@ -5,7 +5,7 @@ export const images = [
   { id: 2021, path: '/img/Premier-League-logo.png' },
   { id: 2001, path: '/img/UCL-logo.png' },
   { id: 2015, path: '/img/Ligue1-logo.png' },
-  { id: 2019, path: '/img/SeriaATim-logo.png' },
+  { id: 2019, path: '/img/SerieATim-logo.png' },
   { id: 2003, path: '/img/Eredivise-logo.png' },
   { id: 2017, path: '/img/LigaNos-logo.png' },
   { id: 2000, path: '/img/WC-logo.png' },

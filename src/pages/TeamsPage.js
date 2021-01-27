@@ -22,7 +22,12 @@ const TeamsPage = ({ match }) => {
       ) : (
         <div className='teamspage__list'>
           {teams.map((item) => (
-            <Teams key={item.id} id={item.id} name={item.name} />
+            <Teams
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              logo={item.crestUrl}
+            />
           ))}
         </div>
       )}

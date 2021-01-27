@@ -26,8 +26,6 @@ const CompetitionsState = ({ children }) => {
       }
     );
 
-    console.log(data);
-
     const filteredCompetitions = (arr, index) => {
       return index.map((idx) => arr[idx]);
     };

@@ -33,11 +33,29 @@ const TeamsState = ({ children }) => {
       }
     );
 
-    console.log(data);
-
     dispatch({
       type: SET_TEAMS,
       payload: data.teams,
+    });
+  };
+
+  const getSingleTeam = async (id) => {
+    dispatch({ type: SET_LOADING });
+
+    const { data } = await axios.get(
+      `http://api.football-data.org/v2/teams/${id}`,
+      {
+        headers: {
+          'X-Auth-Token': API_KEY,
+        },
+      }
+    );
+
+    console.log(data);
+
+    dispatch({
+      type: SET_SINGLE_TEAM,
+      payload: data,
     });
   };
 
@@ -48,6 +66,7 @@ const TeamsState = ({ children }) => {
         singleTeam: state.singleTeam,
         loading: state.loading,
         getTeams,
+        getSingleTeam,
       }}
     >
       {children}
