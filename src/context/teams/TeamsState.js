@@ -2,13 +2,7 @@ import { useReducer } from 'react';
 import axios from 'axios';
 import TeamsContext from './teamsContext';
 import TeamsReducer from './teamsReducer';
-import {
-  SET_LOADING,
-  SET_TEAMS,
-  SET_SINGLE_TEAM,
-  CLEAR_TEAMS,
-  CLEAR_SINGLE_TEAM,
-} from '../types';
+import { SET_LOADING, SET_TEAMS, SET_SINGLE_TEAM } from '../types';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
