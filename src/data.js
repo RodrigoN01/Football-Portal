@@ -9,6 +9,6 @@ export const images = [
   { id: 2003, path: '/img/Eredivise-logo.png' },
   { id: 2017, path: '/img/LigaNos-logo.png' },
   { id: 2000, path: '/img/WC-logo.png' },
-  { id: 2146, path: '/img/Euro-logo.png' },
+  { id: 2018, path: '/img/Euro-logo.png' },
   { id: 2014, path: '/img/LaLiga-logo.png' },
 ];

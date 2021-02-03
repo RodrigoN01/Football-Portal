@@ -37,6 +37,7 @@ const CompetitionsState = ({ children }) => {
         45,
         46,
         49,
+        50,
         57,
         66,
         80,
@@ -44,7 +45,6 @@ const CompetitionsState = ({ children }) => {
         107,
         128,
         149,
-        48,
       ]),
     });
   };

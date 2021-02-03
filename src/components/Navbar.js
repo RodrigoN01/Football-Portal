@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ click }) => {
   return (
     <div className='navbar'>
       <div className='container'>
@@ -18,6 +18,11 @@ const Navbar = () => {
               <Link to='/about'>ABOUT</Link>
             </li>
           </ul>
+          <div className='hamburger__menu' onClick={click}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </nav>
       </div>
     </div>

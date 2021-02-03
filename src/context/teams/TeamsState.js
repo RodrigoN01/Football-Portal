@@ -8,7 +8,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 const TeamsState = ({ children }) => {
   const initialState = {
-    teams: [],
+    teams: {},
     singleTeam: {},
     loading: false,
   };
@@ -29,7 +29,7 @@ const TeamsState = ({ children }) => {
 
     dispatch({
       type: SET_TEAMS,
-      payload: data.teams,
+      payload: data,
     });
   };
 
@@ -44,8 +44,6 @@ const TeamsState = ({ children }) => {
         },
       }
     );
-
-    console.log(data);
 
     dispatch({
       type: SET_SINGLE_TEAM,

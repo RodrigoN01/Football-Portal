@@ -15,7 +15,6 @@ const AboutPage = () => {
             <li>ReactJS</li>
             <li>useContext</li>
             <li>useReducer</li>
-            <li>useState</li>
             <li>Axios</li>
           </ul>
         </div>

@@ -1,10 +1,20 @@
 :root {
   --primary-color: #324ca8;
   --secondary-color: #ffed24;
+  --gradient-color: linear-gradient(
+    90deg,
+    rgb(55, 111, 6) 0%,
+    rgb(71, 121, 9) 35%,
+    rgb(59, 169, 76) 100%
+  );
   --offwhite: #f4f4f4;
+  --dark-gray: #dedcdc;
+  --dark: #5e5e5e;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,15 +25,25 @@ body {
 }
 
 img {
-  width: 210px;
-  height: 295px;
+  height: 215px;
   object-fit: contain;
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+/* Pagewrap */
+.pagewrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Utils */
 .container {
   max-width: 1170px;
-  margin: auto;
+  margin: 0 auto;
+  flex-grow: 1;
 }
 
 .loader img {
@@ -34,7 +54,7 @@ img {
 /* Navbar Styles */
 .navbar {
   padding: 1rem;
-  background: url(./assets/img/Field.jpg) no-repeat;
+  background: var(--gradient-color);
   background-size: cover;
   background-color: var(--primary-color);
 }
@@ -43,6 +63,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 3rem;
 }
 
 .nav__brand a {
@@ -63,7 +84,7 @@ img {
 
 .links__link a {
   display: block;
-  padding: 1rem;
+  padding: 0.4rem;
   color: var(--offwhite);
   text-decoration: none;
   margin-left: 0.5rem;
@@ -76,15 +97,99 @@ img {
   color: var(--secondary-color);
 }
 
+/* Hamburger Menu */
+.hamburger__menu {
+  width: 30px;
+  height: 25px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hamburger__menu > div {
+  width: 100%;
+  height: 3px;
+  background: var(--offwhite);
+}
+
+.hamburger__menu:hover > div {
+  background: var(--secondary-color);
+}
+
+@media (max-width: 760px) {
+  .nav__links {
+    display: none;
+  }
+
+  .hamburger__menu {
+    display: flex;
+  }
+}
+
+/* MenuDrop */
+.menudrop {
+  width: 100%;
+  height: 100vh;
+  background: var(--gradient-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  transform: translateY(-100%);
+  transition: all 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menudrop.show {
+  transform: translateX(0);
+}
+
+.menudrop__links {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.menudrop__links > li {
+  display: flex;
+  align-items: center;
+}
+
+.menudrop__links > li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--offwhite);
+  font-size: 2rem;
+}
+
+.menudrop__links > li a:hover {
+  color: var(--secondary-color);
+}
+
+@media (min-width: 760px) {
+  .menudrop {
+    display: none;
+  }
+}
+
 /* List Styles */
 .listitem {
   text-decoration: none;
-  width: 210px;
+  width: 150px;
   box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
     0 3px 1px 0 rgba(20, 23, 28, 0.1);
-  margin: 1rem auto;
+  margin: 1rem;
   cursor: pointer;
-  display: inline-block;
+  border-bottom: 4px solid var(--primary-color);
 }
 
 .listitem:hover {
@@ -101,37 +206,169 @@ img {
   padding: 5px;
 }
 
+@media (max-width: 560px) {
+  .listitem {
+    width: 190px;
+  }
+}
+
 /* Homepage Styles */
 .homepage__title {
   display: flex;
   justify-content: center;
   color: var(--primary-color);
-  border-bottom: 1px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   padding: 1.5rem 0;
+  font-size: 2.5rem;
 }
 
 .homepage__list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media (max-width: 1100px) {
+  .homepage__list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .homepage__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .homepage__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .homepage__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Teams Page Styles */
+.teamspage {
+  margin: 2rem auto;
+}
+
+.teamspage__title {
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.teamspage__list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media (max-width: 1100px) {
+  .teamspage__list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .teamspage__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .teamspage__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .teamspage__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Single Team Styles */
+.singleteam {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  width: 1100px;
+  color: var(--primary-color);
+}
+
+.singleteam__logo {
+  text-align: center;
+  margin-right: 2rem;
+}
+
+.singleteam__logo > h1 {
+  text-align: center;
+  padding: 1rem;
+}
+
+.singleteam__info h1 {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.singleteam__info p {
+  margin: 1rem 0;
+}
+
+@media (max-width: 1100px) {
+  .singleteam {
+    width: 800px;
+  }
+}
+
+@media (max-width: 760px) {
+  .singleteam {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+  }
+
+  .singleteam__logo {
+    margin: 0;
+  }
+
+  .singleteam__logo > h1 {
+    padding: 3rem;
+  }
+
+  .singleteam__info h1 {
+    text-align: center;
+  }
+
+  .singleteam__info p {
+    text-align: center;
+  }
 }
 
 /* About page Styles */
 .about {
-  margin: 2rem 0;
+  margin: 2rem auto;
   width: 100%;
 }
 
 .about__title {
   font-size: 2rem;
-  margin: 1rem;
+  margin-left: 1rem;
 }
 
 .about__info {
   width: 500px;
-  margin: auto;
+  margin-left: 1rem;
 }
 
-.about__info > p {
+.about__info > div > p {
   font-size: 1.4rem;
   margin: 1rem 0;
 }
@@ -139,4 +376,38 @@ img {
 .about__info > div > ul > li {
   margin-left: 2rem;
   padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 760px) {
+  .about__title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Footer Styles */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background: var(--offwhite);
+  width: 100%;
+}
+
+.footer > h3 {
+  color: var(--dark);
+}
+
+.footer__links {
+  padding: 0.4rem;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.footer__links > a {
+  margin: 0.5rem;
+  color: var(--dark-gray);
 }

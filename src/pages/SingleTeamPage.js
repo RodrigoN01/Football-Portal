@@ -1,4 +1,5 @@
 import { useEffect, useContext } from 'react';
+import flag from '../assets/img/Placeholder.png';
 
 // Context
 import TeamsContext from '../context/teams/teamsContext';
@@ -21,14 +22,23 @@ const SingleTeamPage = ({ match }) => {
         <Loader />
       ) : (
         <div className='singleteam'>
-          <img src={singleTeam.crestUrl} alt={singleTeam.name} />
-          <div className='singleteam__info'>
+          <div className='singleteam__logo'>
+            <img
+              src={singleTeam.crestUrl ? singleTeam.crestUrl : flag}
+              alt={singleTeam.name}
+            />
             <h1>{singleTeam.name}</h1>
+          </div>
+
+          <div className='singleteam__info'>
             <h1>Squad</h1>
             {singleTeam.squad?.map((player, index) => (
-              <span key={index} className='singleteam__squad'>
-                {player.name}
-              </span>
+              <p key={index} className='singleteam__squad'>
+                <span>
+                  <strong>{player.name}: </strong>
+                </span>{' '}
+                <span>{player.position}</span>
+              </p>
             ))}
           </div>
         </div>

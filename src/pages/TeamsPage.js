@@ -13,6 +13,8 @@ const TeamsPage = ({ match }) => {
 
   useEffect(() => {
     getTeams(match.params.id);
+
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -20,16 +22,19 @@ const TeamsPage = ({ match }) => {
       {loading ? (
         <Loader />
       ) : (
-        <div className='teamspage__list'>
-          {teams.map((item) => (
-            <Teams
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              logo={item.crestUrl}
-            />
-          ))}
-        </div>
+        <>
+          <h4 className='teamspage__title'>{teams.competition?.name}</h4>
+          <div className='teamspage__list'>
+            {teams.teams?.map((item) => (
+              <Teams
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                logo={item.crestUrl}
+              />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
