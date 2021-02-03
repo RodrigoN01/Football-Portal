@@ -18,7 +18,7 @@ const CompetitionsState = ({ children }) => {
     dispatch({ type: SET_LOADING });
 
     const { data } = await axios.get(
-      `http://api.football-data.org/v2/competitions/`,
+      `https://api.football-data.org/v2/competitions/`,
       {
         headers: {
           'X-Auth-Token': API_KEY,

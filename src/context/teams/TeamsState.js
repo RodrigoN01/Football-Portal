@@ -19,7 +19,7 @@ const TeamsState = ({ children }) => {
     dispatch({ type: SET_LOADING });
 
     const { data } = await axios.get(
-      `http://api.football-data.org/v2/competitions/${id}/teams`,
+      `https://api.football-data.org/v2/competitions/${id}/teams`,
       {
         headers: {
           'X-Auth-Token': API_KEY,
@@ -37,7 +37,7 @@ const TeamsState = ({ children }) => {
     dispatch({ type: SET_LOADING });
 
     const { data } = await axios.get(
-      `http://api.football-data.org/v2/teams/${id}`,
+      `https://api.football-data.org/v2/teams/${id}`,
       {
         headers: {
           'X-Auth-Token': API_KEY,
