@@ -9,8 +9,8 @@ const Footer = () => {
         <a href='https://www.linkedin.com/in/rodnovaes/'>
           <i className='fab fa-linkedin'></i>
         </a>
-        <a href='https://www.facebook.com/rodrigo.novaes.10004'>
-          <i className='fab fa-facebook'></i>
+        <a href='https://twitter.com/Rod_Novaes'>
+          <i className='fab fa-twitter-square'></i>
         </a>
       </div>
     </footer>
