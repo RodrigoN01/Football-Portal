@@ -26,26 +26,28 @@ const CompetitionsState = ({ children }) => {
       }
     );
 
-    const filteredCompetitions = (arr, index) => {
-      return index.map((idx) => arr[idx]);
+    const competitionIDs = [
+      2002,
+      2013,
+      2016,
+      2021,
+      2001,
+      2015,
+      2019,
+      2003,
+      2017,
+      2000,
+      2018,
+      2014,
+    ];
+
+    const filteredCompetitions = (arr) => {
+      return arr.filter(({ id }) => competitionIDs.includes(id));
     };
 
     dispatch({
       type: SET_COMPETITIONS,
-      payload: filteredCompetitions(data.competitions, [
-        23,
-        45,
-        46,
-        49,
-        50,
-        57,
-        66,
-        80,
-        93,
-        107,
-        128,
-        149,
-      ]),
+      payload: filteredCompetitions(data.competitions),
     });
   };
 
